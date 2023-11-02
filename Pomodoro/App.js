@@ -4,6 +4,7 @@ import { SafeAreaView, StyleSheet, Text, View , Button} from 'react-native';
 import Header from './src/components/header';
 import Timer from './src/components/Timer';
 import MyButton from './src/components/MyButton';
+import {Audio} from 'expo-av';
 
 const colors = ["#F7DC6F","#A2D9CE","#D7BDE2"];
 
