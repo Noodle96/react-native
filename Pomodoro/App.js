@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View , Button} from 'react-native';
 import Header from './src/components/header';
 import Timer from './src/components/Timer';
+import MyButton from './src/components/MyButton';
 
 const colors = ["#F7DC6F","#A2D9CE","#D7BDE2"];
 
@@ -10,11 +11,8 @@ export default function App() {
     const [isRunning, setIsRunning] = useState(false);
     const [time, setTime] = useState(25*60);
     const [currentTime, setCurrentTime] = useState("POMO" | "SHORT" | "BREAK");
-    // console.log('====================================');
-    // console.log(isRunning);
-    // console.log(time);
-    // console.log(currentTime);
-    // console.log('====================================');
+    const [isActive, setIsActive] = useState(false);
+
     return (
         <SafeAreaView style={[styles.container, {backgroundColor: colors[currentTime]}]}>
             <View style={styles.view}>
@@ -26,6 +24,10 @@ export default function App() {
                 />
                 <Timer 
                     time={time}
+                />
+                <MyButton 
+                    isActive={isActive}
+                    setIsActive={setIsActive}
                 />
             </View>
         </SafeAreaView>
