@@ -15,7 +15,7 @@ export default function App() {
     // console.log(currentTime);
     // console.log('====================================');
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={[styles.container, {backgroundColor: colors[currentTime]}]}>
             <View style={styles.view}>
                 <Text style={styles.text}>Pomodoro App</Text>
                 <Text style={styles.text}>{time}</Text>
