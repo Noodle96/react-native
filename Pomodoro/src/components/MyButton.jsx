@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {Audio} from 'expo-av';
 
-export default function MyButton({isActive, setIsActive}) {
+export default function MyButton({isActive, setIsActive, time, setTime, isRunning, setIsRunning}) {
+
+	useEffect(()=>{
+		let interval = null;
+		if(isActive){ //run timer
+			interval = setInterval(() => {
+				setTime(time-1);
+			}, 1);
+		}else{ //limpiar el interval
+			clearInterval(interval);
+		}
+		if(time === 0){
+			setIsActive(false);
+			// setIsRunning(!isRunning);
+			setIsRunning((prev) => !prev);
+			setTime(isRunning?300:1500);
+		}
+		return ()=>clearInterval(interval);
+	},[isActive, time]);
+
 	async function playSound(){
 		const {sound} = await Audio.Sound.createAsync(
 			require("../../assets/click.mp3")
 		);
-		await  sound.playAsync();
+		await  sound.playAsync()
 	}
-
 	function handleStartStop(){
 		playSound();
 		setIsActive(!isActive);
@@ -17,7 +35,7 @@ export default function MyButton({isActive, setIsActive}) {
 	return (
 		<TouchableOpacity style={styles.buttonStyle} onPress={handleStartStop}>
 			<Text style={styles.textStyle}>
-				{isActive?"STOiP":"START"}
+				{isActive?"STOP":"START"}
 			</Text>
 		</TouchableOpacity>	
 	);

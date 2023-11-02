@@ -13,7 +13,11 @@ export default function Header({currentTime, setCurrentTime, setTime}) {
 		<View style={styles.viewStyle}>
 		{
 			tabs.map((item, index) => (
-				<TouchableOpacity key={index} style={[styles.touchableStyle, currentTime != index && styles.itemborderTransparent]} onPress={() => handlePressed(index)}>
+				<TouchableOpacity
+					key={index} 
+					style={[styles.touchableStyle, currentTime != index && styles.itemborderTransparent]}
+					onPress={() => handlePressed(index)}
+				>
 					<Text style={styles.textStyle}>{item}</Text>
 				</TouchableOpacity>
 			))
