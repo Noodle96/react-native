@@ -14,6 +14,7 @@ export default function Header({currentTime, setCurrentTime, setTime}) {
 		{
 			tabs.map((item, index) => (
 				<TouchableOpacity
+					// disabled={currentTime != index && true}
 					key={index} 
 					style={[styles.touchableStyle, currentTime != index && styles.itemborderTransparent]}
 					onPress={() => handlePressed(index)}
