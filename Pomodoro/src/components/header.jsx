@@ -13,8 +13,8 @@ export default function Header({currentTime, setCurrentTime, setTime}) {
 		<View style={styles.viewStyle}>
 		{
 			tabs.map((item, index) => (
-				<TouchableOpacity key={index} style={[styles.itemStyle, currentTime != index && styles.itemborderTransparent]} onPress={() => handlePressed(index)}>
-					<Text>{item}</Text>
+				<TouchableOpacity key={index} style={[styles.touchableStyle, currentTime != index && styles.itemborderTransparent]} onPress={() => handlePressed(index)}>
+					<Text style={styles.textStyle}>{item}</Text>
 				</TouchableOpacity>
 			))
 		}
@@ -26,13 +26,23 @@ const styles = StyleSheet.create({
 	viewStyle: {
 		flexDirection: "row",
 	},
-	itemStyle: {
+	touchableStyle: {
 		width: "33.3%",
 		borderWidth: 3,
 		padding: 5,
+		alignItems: "center",
+		borderRadius: 10,
+		borderColor: "white",
+		marginVertical:15,
 	},
 	itemborderTransparent:{
 		borderColor: "transparent",
 	},
+
+	textStyle: {
+		textTransform:"uppercase",
+		fontSize:14,
+		fontWeight: "bold",
+	}
 });
 

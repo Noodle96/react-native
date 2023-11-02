@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View , Button} from 'react-native';
 import Header from './src/components/header';
+import Timer from './src/components/Timer';
 
 const colors = ["#F7DC6F","#A2D9CE","#D7BDE2"];
 
@@ -18,11 +19,13 @@ export default function App() {
         <SafeAreaView style={[styles.container, {backgroundColor: colors[currentTime]}]}>
             <View style={styles.view}>
                 <Text style={styles.text}>Pomodoro App</Text>
-                <Text style={styles.text}>{time}</Text>
                 <Header 
                     currentTime = {currentTime}
                     setCurrentTime = {setCurrentTime}
                     setTime = {setTime}
+                />
+                <Timer 
+                    time={time}
                 />
             </View>
         </SafeAreaView>
@@ -39,5 +42,7 @@ const styles = StyleSheet.create({
     },
     view: {
         paddingTop: Platform.OS === "android" && 30,
+        paddingHorizontal:15,
+        flex: 1,
     },
 });
