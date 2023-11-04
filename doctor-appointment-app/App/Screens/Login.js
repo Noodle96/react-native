@@ -1,15 +1,15 @@
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
-import PrincipalImage from '../../assets/screen.png';
+import PrincipalImage from '../../assets/library.jpg';
 import Colors from '../../assets/Shared/Colors';
 export default function Login() {
 	return (
 		<View style={styles.viewGeneral}>
 			<Image style={styles.imageStyle} source={PrincipalImage}/>
 			<View style={styles.viewInside}>
-				<Text style={styles.heading}>Your Ultimate Doctor</Text>
-				<Text style={styles.heading}>Appointment Booking App</Text>
-				<Text style={styles.message}> aaaaa bbbbb ccccc ddddd eeeee fffff ggggg hhhhh </Text>
+				<Text style={[styles.heading,{color:Colors.PRIMARY}]}>Conexión Bibliotecaria</Text>
+				<Text style={[styles.heading]}>Tu Biblioteca en Linea</Text>
+				<Text style={styles.message}>Portadas e índices: Explora libros con solo un toque.</Text>
 				<TouchableOpacity style={styles.button}>
 				<Text style={styles.textLogin}>Login with Google</Text>
 			</TouchableOpacity>
@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.opaco,
 	},
 	imageStyle: {
-		width: 300,
+		width: 400,
 		height: 500,
-		objectFit: 'contain',
-		marginTop:20,
+		objectFit: 'cover',
+		// marginTop:20,
 	},
 	viewInside: {
 		width: '100%',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 	},
 	heading: {
 		fontSize: 28,
-		fontWeight: 'bold',
+		fontWeight: '900',
 	},
 	message: {
 		textAlign: 'center',
