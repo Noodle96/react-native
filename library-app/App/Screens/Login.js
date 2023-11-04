@@ -11,8 +11,8 @@ export default function Login() {
 				<Text style={[styles.heading]}>Tu Biblioteca en Linea</Text>
 				<Text style={styles.message}>Portadas e índices: Explora libros con solo un toque.</Text>
 				<TouchableOpacity style={styles.button}>
-				<Text style={styles.textLogin}>Login with Google</Text>
-			</TouchableOpacity>
+					<Text style={styles.textLogin}>Login with Google</Text>
+				</TouchableOpacity>
 			</View>
 		</View>
 		
