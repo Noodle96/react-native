@@ -2,6 +2,7 @@ import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'rea
 import React from 'react'
 import PrincipalImage from '../../assets/library.jpg';
 import Colors from '../../assets/Shared/Colors';
+import SignInWithOAuth from '../Components/SignInWithOAuth';
 export default function Login() {
 	return (
 		<View style={styles.viewGeneral}>
@@ -10,9 +11,10 @@ export default function Login() {
 				<Text style={[styles.heading,{color:Colors.PRIMARY}]}>Conexión Bibliotecaria</Text>
 				<Text style={[styles.heading]}>Tu Biblioteca en Linea</Text>
 				<Text style={styles.message}>Portadas e índices: Explora libros con solo un toque.</Text>
-				<TouchableOpacity style={styles.button}>
+				{/* <TouchableOpacity style={styles.button}>
 					<Text style={styles.textLogin}>Login with Google</Text>
-				</TouchableOpacity>
+				</TouchableOpacity> */}
+				<SignInWithOAuth />
 			</View>
 		</View>
 		
@@ -47,18 +49,5 @@ const styles = StyleSheet.create({
 	message: {
 		textAlign: 'center',
 		marginTop:20,
-	},
-	button: {
-		backgroundColor: Colors.PRIMARY,
-		padding:12,
-		borderRadius:90,
-		alignItems: 'center',
-		marginTop:20,
-		width: Dimensions.get('screen').width*0.8,
-	},
-	textLogin: {
-		fontSize: 17,
-		color: Colors.white,
-		fontWeight: 'bold',
 	},
 });

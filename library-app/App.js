@@ -5,6 +5,7 @@ import Colors from './assets/Shared/Colors';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import Config from './assets/Shared/Config';
 import SignInWithOAuth from './App/Components/SignInWithOAuth';
+import Home from './App/Screens/Home';
 
 export default function App() {
   const publicKey = Config.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
@@ -20,12 +21,14 @@ export default function App() {
     <ClerkProvider publishableKey={publicKey}>
       <SafeAreaView style={styles.container}>
         <SignedIn>
-          <Text>You are Signed in</Text>
+          {/* <Text>You are Signed in</Text> */}
+          <Home />
         </SignedIn>
 
         <SignedOut>
           {/* <Text>You are Signed out</Text> */}
-          <SignInWithOAuth />
+          {/* <SignInWithOAuth /> */}
+          <Login />
         </SignedOut>
       </SafeAreaView>
     </ClerkProvider>
