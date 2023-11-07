@@ -5,7 +5,7 @@ import { useAuth } from '@clerk/clerk-expo';
 export default function Home() {
 	const { isLoaded,signOut } = useAuth();
 	return (
-		<View>
+		<View style={{ flexDirection: 'row' }}>
 			<Text>Home</Text>
 			<Button title='SignOut' onPress={()=>{signOut();}} ></Button>
 		</View>
