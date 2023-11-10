@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		marginTop:20,
 		width: Dimensions.get('screen').width*0.8,
+    fontFamily: 'Montserrat-Bold',
 	},
 	textLogin: {
 		fontSize: 17,

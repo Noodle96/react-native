@@ -10,9 +10,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import TabNavigation from './App/Navigations/TabNavigation';
 import Profile from './App/Screens/Profile';
 import Appointment from './App/Screens/Appointment';
+import { useFonts } from 'expo-font';
 
 export default function App() {
   const publicKey = Config.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const [fontsLoaded, fontError] = useFonts({
+    'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
+    'Montserrat-Black': require('./assets/fonts/Montserrat-Black.ttf'),
+    'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+    'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
+    // add more of ./assets/fonts
+  });
+  if(!fontsLoaded) return null;
   // console.log(publicKey);
   return (
     // <SafeAreaView style={styles.container}>

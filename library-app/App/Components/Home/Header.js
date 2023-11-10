@@ -14,7 +14,7 @@ export default function Header() {
 					style={styles.image}
 				/>
 				<View>
-					<Text style={{fontSize:13,}}>Hola, 👋</Text>
+					<Text style={{fontSize:13,fontFamily:'Montserrat-Regular'}}>Hola, 👋</Text>
 					<Text style={styles.textFullName}>{user.fullName}</Text>
 				</View>
 			</View>
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
 	},
 	textFullName:{
 		fontSize:15,
-		fontWeight: 'bold',
+		// fontWeight: 'bold',
+		fontFamily: 'Montserrat-Bold',
 	},
 });

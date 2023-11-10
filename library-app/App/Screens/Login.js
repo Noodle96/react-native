@@ -41,10 +41,12 @@ const styles = StyleSheet.create({
 	},
 	heading: {
 		fontSize: 28,
-		fontWeight: '900',
+		// fontWeight: '900',
+		fontFamily: 'Montserrat-ExtraBold',
 	},
 	message: {
 		textAlign: 'center',
 		marginTop:20,
+		fontFamily: 'Montserrat-Regular',
 	},
 });

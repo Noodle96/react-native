@@ -12,3 +12,5 @@
     npx expo install react-native-gesture-handler
     Navigators/BottomTabs
     npm install @react-navigation/bottom-tabs
+4.- Google Fonts
+    npx expo install expo-font
