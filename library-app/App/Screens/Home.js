@@ -18,8 +18,8 @@ export default function Home() {
 
 const styles = StyleSheet.create({
 	view: {
-		flexDirection: 'row',
-		padding:20,
+		// flexDirection: 'row',
+		padding:11,
 		marginTop: 25,
 	}
 });
