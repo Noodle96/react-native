@@ -6,12 +6,13 @@ import Profile from '../Screens/Profile';
 import Appointment from '../Screens/Appointment';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import Colors from '../../assets/Shared/Colors';
 
 const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
 	return (
 		// screenOptions={{headerShown: false}}
-		<Tab.Navigator screenOptions={{headerShown: false}} >
+		<Tab.Navigator screenOptions={{headerShown: false, tabBarActiveTintColor:Colors.PRIMARY}}>
 			<Tab.Screen
 				name="Home"
 				component={Home}
