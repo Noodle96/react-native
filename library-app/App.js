@@ -24,6 +24,7 @@ export default function App() {
     // </SafeAreaView>
     <ClerkProvider publishableKey={publicKey}>
       <SafeAreaView style={styles.container}>
+        {/* <StatusBar hidden /> */}
         {/* <SignedIn> */}
           {/* <Text>You are Signed out</Text> */}
           {/* <SignInWithOAuth /> */}
