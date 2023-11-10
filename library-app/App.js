@@ -25,7 +25,7 @@ export default function App() {
     <ClerkProvider publishableKey={publicKey}>
       <SafeAreaView style={styles.container}>
         {/* <StatusBar hidden /> */}
-        {/* <SignedIn> */}
+        <SignedIn>
           {/* <Text>You are Signed out</Text> */}
           {/* <SignInWithOAuth /> */}
           {/* <Text>You are Signed in</Text> */}
@@ -35,11 +35,11 @@ export default function App() {
           <NavigationContainer>
             <TabNavigation />
           </NavigationContainer>
-        {/* </SignedIn> */}
+        </SignedIn>
           
-        {/* <SignedOut>
+        <SignedOut>
           <Login />
-        </SignedOut> */}
+        </SignedOut>
       </SafeAreaView>
     </ClerkProvider>
   );
