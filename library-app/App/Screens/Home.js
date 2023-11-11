@@ -4,6 +4,7 @@ import { useAuth } from '@clerk/clerk-expo';
 import Header from '../Components/Home/Header';
 import SearchBar from '../Components/Home/SearchBar';
 import Slider from '../Components/Home/Slider';
+import Cursos from '../Components/Home/Cursos';
 
 export default function Home() {
 	const { isLoaded,signOut } = useAuth();
@@ -17,6 +18,7 @@ export default function Home() {
 			{/* <Text>Se esta buscando: {searchText}</Text> */}
 			<Slider />
 
+			<Cursos />
 
 
 			{/* <Text>Home</Text> */}

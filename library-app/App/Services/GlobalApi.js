@@ -9,7 +9,9 @@ const AxiosOInstance = axios.create({
 });
 
 const getSlider = () => AxiosOInstance.get("/sliders?populate=*");
+const getCursos = () => AxiosOInstance.get("/cursos?populate=*");
 
 export default{
 	getSlider,
+	getCursos,
 }
