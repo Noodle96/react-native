@@ -14,3 +14,8 @@
     npm install @react-navigation/bottom-tabs
 4.- Google Fonts
     npx expo install expo-font
+5.- Config Strapi backend
+    npx create-strapi-app@latest library-app-strapi
+    yarn add @strapi/provider-upload-cloudinary
+6.- Axios-http
+    npm install axios
