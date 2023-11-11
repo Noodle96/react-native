@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import GlobalApi from '../../Services/GlobalApi';
+import Colors from '../../../assets/Shared/Colors';
 
 export default function Cursos() {
-	const [cursoList, setCursoList] = useState();
+	const [cursoList, setCursoList] = useState([]);
 	useEffect(()=>{
 		getCursos();
 	},[]);
@@ -12,15 +13,52 @@ export default function Cursos() {
 			setCursoList(resp.data.data);
 		});
 	};
-	if(!cursoList)return null;
+	if(!cursoList){
+		console.log("return null");
+		return null;
+	}
 	return (
 		<View style={styles.container}>
-			<Text>Cursos</Text>
+			<View style={styles.secondaryContainer}>
+				<Text style={styles.textCurso}>Cursos</Text>
+				<Text style={styles.textSeeAll}>See All</Text>
+			</View>
+			<FlatList 
+				data={cursoList}
+				renderItem={({item})=>(
+					<View>
+						<View>
+							<Image
+								source={{uri:item.attributes.icono.data.attributes.url}}
+								style={styles.icon}
+							/>
+						</View>
+					</View>
+				)}
+			/>
 		</View>
 	)
 }
 const styles = StyleSheet.create({
 	container:{
 		marginTop:10,
+	},
+	secondaryContainer:{
+		display:'flex',
+		flexDirection:'row',
+		justifyContent:'space-between',
+		alignItems:'center',
+	},
+	textCurso:{
+		fontFamily:'Montserrat-ExtraBold',
+		fontSize:17,
+	},
+	textSeeAll:{
+		fontFamily:'Montserrat-ExtraBold',
+		color:Colors.PRIMARY,
+	},
+	icon:{
+		width:30,
+		height:30,
 	}
 });

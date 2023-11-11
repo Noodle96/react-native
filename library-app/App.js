@@ -19,6 +19,8 @@ export default function App() {
     'Montserrat-Black': require('./assets/fonts/Montserrat-Black.ttf'),
     'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
     'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
+    'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
+    'Montserrat-Italic': require('./assets/fonts/Montserrat-Italic.ttf'),
     // add more of ./assets/fonts
   });
   if(!fontsLoaded) return null;
