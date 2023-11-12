@@ -25,14 +25,21 @@ export default function Cursos() {
 			</View>
 			<FlatList 
 				data={cursoList}
-				renderItem={({item})=>(
-					<View>
-						<View>
+				numColumns={5}
+				columnWrapperStyle={{
+					flex:1,
+					justifyContent:'space-between',
+				}}
+				style={styles.iconos}
+				renderItem={({item,index})=>index<5 &&(
+					<View style={{alignItems:'center',}}>
+						<View style={styles.view2}>
 							<Image
 								source={{uri:item.attributes.icono.data.attributes.url}}
 								style={styles.icon}
 							/>
 						</View>
+						<Text>{item.attributes.nombre}</Text>
 					</View>
 				)}
 			/>
@@ -60,5 +67,13 @@ const styles = StyleSheet.create({
 	icon:{
 		width:30,
 		height:30,
-	}
+	},
+	iconos:{
+		marginTop:15,
+	},
+	view2:{
+		backgroundColor:Colors.SECUNDARY,
+		padding:10,
+		borderRadius:22,
+	},
 });
