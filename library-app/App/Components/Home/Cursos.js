@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, FlatList, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import GlobalApi from '../../Services/GlobalApi';
 import Colors from '../../../assets/Shared/Colors';
+import SubHeading from './SubHeading';
 
 export default function Cursos() {
 	const [cursoList, setCursoList] = useState([]);
@@ -19,10 +20,7 @@ export default function Cursos() {
 	}
 	return (
 		<View style={styles.container}>
-			<View style={styles.secondaryContainer}>
-				<Text style={styles.textCurso}>Cursos</Text>
-				<Text style={styles.textSeeAll}>See All</Text>
-			</View>
+			<SubHeading subHeadingTitle={"Cursos"}/>
 			<FlatList 
 				data={cursoList}
 				numColumns={5}
@@ -30,7 +28,7 @@ export default function Cursos() {
 					flex:1,
 					justifyContent:'space-between',
 				}}
-				style={styles.iconos}
+				// style={styles.iconos}
 				renderItem={({item,index})=>index<5 &&(
 					<View style={{alignItems:'center',}}>
 						<View style={styles.view2}>
@@ -49,20 +47,6 @@ export default function Cursos() {
 const styles = StyleSheet.create({
 	container:{
 		marginTop:10,
-	},
-	secondaryContainer:{
-		display:'flex',
-		flexDirection:'row',
-		justifyContent:'space-between',
-		alignItems:'center',
-	},
-	textCurso:{
-		fontFamily:'Montserrat-ExtraBold',
-		fontSize:17,
-	},
-	textSeeAll:{
-		fontFamily:'Montserrat-ExtraBold',
-		color:Colors.PRIMARY,
 	},
 	icon:{
 		width:30,
