@@ -5,6 +5,7 @@ import Header from '../Components/Home/Header';
 import SearchBar from '../Components/Home/SearchBar';
 import Slider from '../Components/Home/Slider';
 import Cursos from '../Components/Home/Cursos';
+import ClubEstudiantes from '../Components/Home/ClubEstudiantes';
 
 export default function Home() {
 	const { isLoaded,signOut } = useAuth();
@@ -20,6 +21,9 @@ export default function Home() {
 
 			<Cursos />
 
+			<ClubEstudiantes />
+
+			<ClubEstudiantes />
 
 			{/* <Text>Home</Text> */}
 			{/* <Button title='SignOut' onPress={()=>{signOut();}} ></Button> */}

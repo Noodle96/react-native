@@ -6,7 +6,7 @@ export default function SubHeading({subHeadingTitle}) {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.textCurso}>{subHeadingTitle}</Text>
-			<Text style={styles.textSeeAll}>See All</Text>
+			<Text style={styles.textSeeAll}>Ver todos</Text>
 		</View>
 	)
 }

@@ -5,4 +5,5 @@ export default{
 	opaco: "#D6D5D5",
 	RED: "#0000FF",
 	GRAY: '#b8b8b8',
+	GRAY2: '#a6a4a4',
 }

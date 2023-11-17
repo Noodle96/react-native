@@ -10,8 +10,10 @@ const AxiosOInstance = axios.create({
 
 const getSlider = () => AxiosOInstance.get("/sliders?populate=*");
 const getCursos = () => AxiosOInstance.get("/cursos?populate=*");
+const getClubEstudiantes = () => AxiosOInstance.get("/club-estudiantes?filters[premiumClub][$equa]=true&populate=*");
 
 export default{
 	getSlider,
 	getCursos,
+	getClubEstudiantes,
 }
