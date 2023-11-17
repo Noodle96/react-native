@@ -1,4 +1,4 @@
-import { View, Text, Button, StyleSheet } from 'react-native'
+import { View, Text, Button, StyleSheet, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { useAuth } from '@clerk/clerk-expo';
 import Header from '../Components/Home/Header';
@@ -11,7 +11,7 @@ export default function Home() {
 	const { isLoaded,signOut } = useAuth();
 	const [searchText, setSearchText] = useState("");
 	return (
-		<View style={styles.view}>
+		<ScrollView style={styles.view}>
 			<Header />
 			<SearchBar
 				setSearchText = {setSearchText}
@@ -19,22 +19,33 @@ export default function Home() {
 			{/* <Text>Se esta buscando: {searchText}</Text> */}
 			<Slider />
 
-			<Cursos />
+			<View style={styles.container}>
+				<Cursos />
+			</View>
+			
+			<View style={styles.container}>
+				<ClubEstudiantes />
+			</View>
 
-			<ClubEstudiantes />
-
-			<ClubEstudiantes />
+			<View style={styles.container}>
+				<ClubEstudiantes />
+			</View>
+			
 
 			{/* <Text>Home</Text> */}
 			{/* <Button title='SignOut' onPress={()=>{signOut();}} ></Button> */}
-		</View>
+		</ScrollView>
 	)
 }
 
 const styles = StyleSheet.create({
 	view: {
 		// flexDirection: 'row',
+		flex:1,
 		padding:11,
 		marginTop: 25,
-	}
+	},
+	container: {
+		flex: 1,
+	},
 });
