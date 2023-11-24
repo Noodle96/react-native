@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import GlobalApi from '../../Services/GlobalApi';
 import Colors from '../../../assets/Shared/Colors';
 import SubHeading from './SubHeading';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Cursos() {
+	const navigation = useNavigation();
 	const [cursoList, setCursoList] = useState([]);
 	useEffect(()=>{
 		getCursos();
@@ -22,6 +24,7 @@ export default function Cursos() {
 		<View style={styles.container}>
 			<SubHeading subHeadingTitle={"Cursos"}/>
 			<FlatList 
+				scrollEnabled={false}
 				data={cursoList}
 				numColumns={5}
 				columnWrapperStyle={{
@@ -30,7 +33,7 @@ export default function Cursos() {
 				}}
 				// style={styles.iconos}
 				renderItem={({item,index})=>index<5 &&(
-					<View style={{alignItems:'center',}}>
+					<TouchableOpacity onPress={()=>navigation.navigate('Club-students-listScreen')} style={{alignItems:'center',}}>
 						<View style={styles.view2}>
 							<Image
 								source={{uri:item.attributes.icono.data.attributes.url}}
@@ -38,7 +41,7 @@ export default function Cursos() {
 							/>
 						</View>
 						<Text>{item.attributes.nombre}</Text>
-					</View>
+					</TouchableOpacity>
 				)}
 			/>
 		</View>
