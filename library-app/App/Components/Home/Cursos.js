@@ -33,7 +33,7 @@ export default function Cursos() {
 				}}
 				// style={styles.iconos}
 				renderItem={({item,index})=>index<5 &&(
-					<TouchableOpacity onPress={()=>navigation.navigate('Club-students-listScreen')} style={{alignItems:'center',}}>
+					<TouchableOpacity onPress={()=>navigation.navigate('Club-students-listScreen',{categoryName:item.attributes.nombre})} style={{alignItems:'center',}}>
 						<View style={styles.view2}>
 							<Image
 								source={{uri:item.attributes.icono.data.attributes.url}}
